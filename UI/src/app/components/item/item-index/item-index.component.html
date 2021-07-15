@@ -8,6 +8,6 @@
     <div class="contents" *ngIf="isAddMode">
         <app-item-create class="contents" [listId]="listId" (newItemEvent)="addItem($event)"></app-item-create>
     </div>
-    <button class="col-0 button-submit" *ngIf="!isAddMode" (click)="toggleAddMode()">Add New Item</button>
-    <button class="col-0 button-cancel" *ngIf="isAddMode" (click)="toggleAddMode()">Cancel New Item</button>
+    <button class="col-0 button-primary" *ngIf="!isAddMode" (click)="toggleAddMode()">Add New Item</button>
+    <button class="col-0 button-danger" *ngIf="isAddMode" (click)="toggleAddMode()">Cancel New Item</button>
 </div>
