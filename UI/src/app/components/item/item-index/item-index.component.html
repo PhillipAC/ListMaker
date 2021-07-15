@@ -1,0 +1,13 @@
+<div class="item-index-container">
+    <div class="col-0 label">Items</div>
+    <div class="col-0"></div>
+    <div class="col-2"></div>
+    <div class="contents" *ngFor="let item of items">
+        <app-item-details class="contents" [item]="item" (deleteItemEvent)="deleteItem($event)"></app-item-details>
+    </div>
+    <div class="contents" *ngIf="isAddMode">
+        <app-item-create class="contents" [listId]="listId" (newItemEvent)="addItem($event)"></app-item-create>
+    </div>
+    <button class="col-0 button-submit" *ngIf="!isAddMode" (click)="toggleAddMode()">Add New Item</button>
+    <button class="col-0 button-cancel" *ngIf="isAddMode" (click)="toggleAddMode()">Cancel New Item</button>
+</div>

@@ -1,0 +1,14 @@
+<div class="label">List Details</div>
+<div class="list-detail-container">
+    <div class="border list-detail-container col-0-span-2">
+        <div class="col-0">Id</div>
+        <div class="col-1">{{list.id}}</div>
+        <div class="col-0">Name</div>
+        <div class="col-1">{{list.name}}</div>
+        <div class="col-0">Description</div>
+        <div class="col-1">{{list.description}}</div>
+    </div>
+    <app-item-index class="col-0-span-2 border" [listId]="list.id" [items]="list.items"></app-item-index>
+    <button class="col-0 back-button" routerLink="..">Back</button>
+    <button class="col-1 update-button" routerLink="update">Update List Info</button> 
+</div>

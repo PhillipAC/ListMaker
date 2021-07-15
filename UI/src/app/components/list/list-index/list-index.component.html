@@ -1,0 +1,5 @@
+<div class="label">Lists:</div>
+<ul>
+    <li *ngFor="let list of lists"><a routerLink="{{list.id}}">{{list.name}}</a> - {{list.description}}</li>
+</ul>
+<button class="navigation-button" routerLink="create">New</button>

@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+.col-0{
+    grid-column: 1;
+}
+
+.col-1{
+    grid-column: 2;
+}
+
+.col-2{
+    grid-column: 3;
+}
+
+.col-0-span-2{
+    grid-column: 1 / span 2;
+}
+
+.border{
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    padding: 5px;
+    margin: 5px;
+}
+
+.contents{
+    display: contents
+}
+
+.button-submit{
+    background-color: green;
+}
+
+.button-cancel{
+    background-color: red;
+}

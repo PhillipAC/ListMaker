@@ -1,0 +1,9 @@
+<div class="label">Update List</div>
+<div class="list-create-container">
+    <div class="col-0">Name</div>
+    <input class="col-1" [(ngModel)]="list.name" />
+    <div class="col-0">Description</div>
+    <input class="col-1" [(ngModel)]="list.description" />
+    <button class="col-0 back-button" routerLink="..">Back</button>
+    <button class="col-1 submit-button" (click)="update()">Update</button> 
+</div>
