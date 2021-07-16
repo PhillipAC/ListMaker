@@ -8,7 +8,7 @@ namespace API.Models
     {
         public List<SimpleItemDto> Items {get; set;}
 
-        public ListDto(ItemList list, List<Item> items) : base(list)
+        public ListDto(ItemList list, List<Item> items) : base(list, items.Count)
         {
             Items = items.Select(item => new SimpleItemDto(item)).ToList();
         }

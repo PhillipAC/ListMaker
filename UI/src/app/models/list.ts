@@ -6,7 +6,8 @@ export class List extends Entity{
         public id: number,
         public name: string,
         public description: string,
-        public items: Item[] = []
+        public items: Item[] = [],
+        public itemCount: number = 0
     ){
         super(id);
     }

@@ -1,5 +1,12 @@
 <div class="label">Lists:</div>
-<ul>
-    <li *ngFor="let list of lists"><a routerLink="{{list.id}}">{{list.name}}</a> - {{list.description}}</li>
-</ul>
+<div class="border list-index-container">
+    <div class="col-0">Name</div>
+    <div class="col-1">Description</div>
+    <div class="col-2">Item Count</div>
+    <div class="contents" *ngFor="let list of lists">
+        <div class="col-0"><a routerLink="{{list.id}}">{{list.name}}</a></div>
+        <div class="col-1">{{list.description}}</div>
+        <div class="col-2">{{list.itemCount}}</div>
+    </div>
+</div>
 <button class="button-primary" routerLink="create">New</button>

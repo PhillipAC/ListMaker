@@ -28,8 +28,13 @@ namespace API.Controllers
         [HttpGet]
         public ActionResult Get()
         {
+            List<SimpleListDto> listDto = new List<SimpleListDto>();
             var lists = _itemListRepository.GetAll();
-            return Ok(lists.Select(list => new SimpleListDto(list)));
+            lists.ForEach(l => {
+                int count = _itemRepository.GetAllByListId(l.Id).Count();
+                listDto.Add(new SimpleListDto(l, count));
+            });
+            return Ok(listDto);
         }
 
         [HttpGet("{id}")]
@@ -46,7 +51,7 @@ namespace API.Controllers
             var list = _itemListRepository.Create(data.Name, data.Description);
             if(list != null)
             {
-                return Ok(new SimpleListDto(list));
+                return Ok(new SimpleListDto(list, 0));
             }
             return BadRequest();
         }
@@ -55,9 +60,10 @@ namespace API.Controllers
         public ActionResult Update(int id, UpdateList data)
         {
             var list = _itemListRepository.Update(id, data.Name, data.Description);
+            var itemCount = _itemRepository.GetAllByListId(id).Count();
             if(list != null)
             {
-                return Ok(new SimpleListDto(list));
+                return Ok(new SimpleListDto(list, itemCount));
             }
             return BadRequest();
         }
